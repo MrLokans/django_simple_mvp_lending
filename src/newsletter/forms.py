@@ -15,5 +15,5 @@ class SignUpForm(forms.ModelForm):
         return email
 
     def clean_full_name(self):
-        full_name = self.clean_data.get("full_name")
+        full_name = self.cleaned_data.get("full_name")
         return full_name
