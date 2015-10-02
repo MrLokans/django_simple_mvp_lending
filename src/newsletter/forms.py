@@ -7,5 +7,13 @@ class SignUpForm(forms.ModelForm):
         model = SignUp
         fields = ['full_name', 'email',]
 
+    # validators
     def clean_email(self):
-        pass
+        email = self.cleaned_data.get('email')
+        if "edu" not in email.split("@")[-1]:
+            raise forms.ValidationError("Please use a valid colledge address.")
+        return email
+
+    def clean_full_name(self):
+        full_name = self.clean_data.get("full_name")
+        return full_name
