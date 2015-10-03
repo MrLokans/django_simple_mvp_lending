@@ -6,5 +6,15 @@
 </head>
 <body>
     <h1>Hello, {{ user }}</h1>
+
+    <form method="POST" action="">
+        <!-- this is a Cross-Site Request Forgery prevention method-->
+        <!-- see https://learn.javascript.ru/csrf-->
+        {% csrf_token %}
+        <!-- Renders form as a paragraph -->
+        {{ form.as_p }}
+
+        <input type="submit" value="Sign Up"/>
+    </form>
 </body>
 </html>
