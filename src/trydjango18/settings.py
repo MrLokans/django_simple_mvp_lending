@@ -113,3 +113,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Use in production
+STATIC_ROOT = os.path.join(BASE_DIR, "static", "static_root")
+
+# Use manage.py collectstatic to load statics
+
+STATICFILES_DIR = (
+    os.path.join(BASE_DIR, "static", "our_static"),
+)
+
+# For something that's uploaded from somewhere out of your app
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"static", "media_root")
