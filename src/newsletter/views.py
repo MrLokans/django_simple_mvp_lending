@@ -29,7 +29,7 @@ def home(request):
         "form": form,
     }
 
-    return render(request, "base.html", context)
+    return render(request, "home.html", context)
 
 
 def contact(request):
